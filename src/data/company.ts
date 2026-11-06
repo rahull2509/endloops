@@ -73,3 +73,4 @@ export const AUDIENCE_SEGMENTS = [
     features: ["Native Mollak filing formats", "Unit square-foot entitlement matrix", "Statutory 5% marketing fee cap tracking"]
   }
 ];
+

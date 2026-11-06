@@ -10,3 +10,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "https://endloops.com/sitemap.xml",
   };
 }
+

@@ -49,3 +49,4 @@ export const FAQS: FAQItem[] = [
     answer: "We typically conduct a 2-week structured pilot where we ingest a batch of your historical documents (e.g., 200–500 vendor invoices, a past escrow audit file, or annual budget sheets). We run them through Endloops and compare the generated working papers directly against your team's historical manual work papers to demonstrate precision, time saved, and audit readiness."
   }
 ];
+

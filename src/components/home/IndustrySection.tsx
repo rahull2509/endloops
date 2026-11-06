@@ -135,3 +135,4 @@ export const IndustrySection: React.FC = () => {
     </section>
   );
 };
+
