@@ -1,69 +1,79 @@
-import Image from "next/image";
+import React from "react";
+import type { Metadata } from "next";
+import { Hero } from "@/components/home/Hero";
+import { TrustPositioning } from "@/components/home/TrustPositioning";
+import { InteractiveDocumentDemo } from "@/components/home/InteractiveDocumentDemo";
+import { SolutionsOverview } from "@/components/home/SolutionsOverview";
+import { ToolsOverview } from "@/components/home/ToolsOverview";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { TechCapabilities } from "@/components/home/TechCapabilities";
+import { IndustrySection } from "@/components/home/IndustrySection";
+import { RoiCalculator } from "@/components/home/RoiCalculator";
+import { CtaBanner } from "@/components/home/CtaBanner";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Endloops | Financial Automation for Accountants, Auditors & Property Finance",
+  description:
+    "Software prepares the work. Financial professionals review and decide. Born in Dubai inside Alkazim, Endloops automates budget reviews, escrow audits, 3-way vouching, and draft working papers.",
+  openGraph: {
+    title: "Endloops | Financial Automation for Accountants, Auditors & Property Finance",
+    description:
+      "Software prepares the work. Financial professionals review and decide. High-precision financial automation for accounting, audit, and property finance teams.",
+    url: "https://endloops.com",
+    siteName: "Endloops",
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen">
+      {/* 1. Hero Section */}
+      <Hero />
+
+      {/* Signature Interactive Product Visualization Section */}
+      <section className="py-16 bg-[#06101c] border-y border-slate-800 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <span className="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800/80 inline-block mb-3">
+              Interactive Product Demo
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              See How Endloops Automates Financial Work
+            </h2>
+            <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+              Explore our live multi-stage simulation. Switch between realistic demo packets, inspect extracted fields, view automated 3-way matching, examine draft working papers, and test the human review sign-off.
+            </p>
+          </div>
+
+          <InteractiveDocumentDemo />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* 2. Trust and Brand Positioning */}
+      <TrustPositioning />
+
+      {/* 3. Solutions Overview (End-to-End Solutions) */}
+      <SolutionsOverview />
+
+      {/* 4. Standalone Tools Overview */}
+      <ToolsOverview />
+
+      {/* 5. How It Works (5-Stage Architecture) */}
+      <HowItWorks />
+
+      {/* 6. Technology Capabilities */}
+      <TechCapabilities />
+
+      {/* 7. Industry / Target Audience Section */}
+      <IndustrySection />
+
+      {/* 8. Interactive Efficiency Calculator */}
+      <RoiCalculator />
+
+      {/* 9. Final High-Impact CTA */}
+      <CtaBanner />
     </div>
   );
 }
